@@ -132,7 +132,7 @@ a:hover { color: var(--color-accent-600); border-bottom-color: var(--color-accen
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6); margin-top: var(--space-8); max-width: 1100px;">
       <p style="font-size: 17px; line-height: 1.55; margin: 0; text-wrap: pretty;">TMX finished at 4.6× its original estimate. The new project's estimate is already higher than TMX's final cost before a route has even been planned.</p>
-      <p style="font-size: 17px; line-height: 1.55; margin: 0; text-wrap: pretty;">The Parliamentary Budget Officer valued the finished Trans Mountain system in 2024 at $29.6B–$33.4B. It cost $34.2B to build. At either valuation, after the bills are paid, what remains falls short by billions; a net loss. Ottawa has been trying to sell it since it opened. They cannot find a buyer.</p>
+      <p style="font-size: 17px; line-height: 1.55; margin: 0; text-wrap: pretty;">The Parliamentary Budget Officer valued the finished Trans Mountain system in 2024 at $29.6B–$33.4B. It cost $34.2B to build. At either valuation, after the bills are paid, what remains falls short by billions; a net loss.</p>
     </div>
   </section>
 
@@ -155,7 +155,7 @@ a:hover { color: var(--color-accent-600); border-bottom-color: var(--color-accen
             </div>
           </div>
         </sc-for>
-        <p style="font-size: 16px; line-height: 1.5; margin: 0;">This single pipeline moves the equivalent of about <strong>22% of Canada's total emissions</strong>, and roughly <strong>2.4× everything BC emits</strong>.</p>
+        <p style="font-size: 16px; line-height: 1.5; margin: 0;">This single pipeline moves the equivalent of about <strong>23% of Canada's total emissions</strong>, and roughly <strong>2.6× everything BC emits</strong>.</p>
       </div>
     </div>
     <div style="border: 2px solid var(--color-divider); border-top: none; padding: var(--space-6); max-width: 100%;">
@@ -212,7 +212,7 @@ a:hover { color: var(--color-accent-600); border-bottom-color: var(--color-accen
   <footer style="padding: var(--space-8) var(--space-6) calc(var(--space-8) * 1.8); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
     <div>
       <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: var(--space-3);">Sources</div>
-      <p style="font-size: 13px; line-height: 1.6; margin: 0;">Canada Gazette Part I, Vol. 160 No. 31, Supplement — Notice: West Coast Oil Pipeline, 1 Aug 2026 · Major Projects Office project page, Privy Council Office · Office of the Parliamentary Budget Officer, Trans Mountain Pipeline — 2024 Report, Nov 2024 · TD Economics, Pipelines and Pathways, July 2026 · BC Wildfire Service, Wildfire Season Summary, gov.bc.ca · Canadian Journal of Forest Research, "The 2023 wildfires in British Columbia," 2024 · US EPA Greenhouse Gas Equivalencies Calculator.</p>
+      <p style="font-size: 13px; line-height: 1.6; margin: 0;">Canada Gazette Part I, Vol. 160 No. 31, Supplement — Notice: West Coast Oil Pipeline, 1 Aug 2026 · Major Projects Office project page, Privy Council Office · Office of the Parliamentary Budget Officer, Trans Mountain Pipeline — 2024 Report, Nov 2024 · TD Economics, Pipelines and Pathways, July 2026 · BC Wildfire Service, Wildfire Season Summary, gov.bc.ca · Canadian Journal of Forest Research, "The 2023 wildfires in British Columbia," 2024 · US EPA Greenhouse Gas Equivalencies Calculator · Environment and Climate Change Canada, Greenhouse Gas Sources and Sinks in Canada: 2026 (2024 data) · BC Provincial Inventory of Greenhouse Gas Emissions (2023).</p>
     </div>
     <div>
       <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: var(--space-3);">Note</div>
@@ -274,13 +274,13 @@ class Component extends DCLogic {
 
     const carbonRows = [
       { label: 'This pipeline, burned', value: '157 Mt', v: 157, accent: true },
-      { label: 'Canada, total inventory', value: '~695 Mt', v: 695 },
-      { label: 'British Columbia, total', value: '~65 Mt', v: 65 }
+      { label: 'Canada, total inventory', value: '685 Mt', v: 685 },
+      { label: 'British Columbia, total', value: '61 Mt', v: 61.1 }
     ];
     const carbon = carbonRows.map(k => ({
       label: k.label, value: k.value,
       fill: k.accent ? 'var(--color-accent)' : 'var(--color-text)',
-      width: g ? (k.v / 695 * 100).toFixed(1) + '%' : '0%'
+      width: g ? (k.v / 685 * 100).toFixed(1) + '%' : '0%'
     }));
 
     const steps = [
@@ -293,7 +293,7 @@ class Component extends DCLogic {
     const all = [
       { level: 'Provincial · Kamloops–North Thompson', name: 'Ward Stamer, MLA', role: 'Conservative', email: 'Ward.Stamer.MLA@leg.bc.ca', phone: '250-554-5416 · 618B Tranquille Rd, Kamloops V2B 3H6', note: '', cat: 'Provincial' },
       { level: 'Federal · Kamloops—Thompson—Nicola', name: 'Frank Caputo, MP', role: 'Conservative', email: 'frank.caputo@parl.gc.ca', phone: '250-851-4991 · 6–275 Seymour St, Kamloops V2C 2E7', note: '', cat: 'Federal' },
-      { level: 'Provincial · Kamloops Centre', name: 'Peter Milobar, MLA', role: 'Conservative · Shadow Minister for Finance', email: 'Peter.Milobar.MLA@leg.bc.ca', phone: '', note: '', cat: 'Provincial' },
+      { level: 'Provincial · Kamloops Centre', name: 'Peter Milobar, MLA', role: 'Conservative', email: 'Peter.Milobar.MLA@leg.bc.ca', phone: '', note: '', cat: 'Provincial' },
       { level: 'Federal', name: 'Hon. Dominic LeBlanc', role: 'Minister responsible for One Canadian Economy', email: 'dominic.leblanc@parl.gc.ca', phone: '', note: '', cat: 'Federal' },
       { level: 'Provincial', name: 'Hon. David Eby', role: 'Premier of British Columbia', email: 'premier@gov.bc.ca', phone: '', note: 'BC negotiated coastal spill safeguards. Ask what it negotiated for the interior corridor — the 1,250 km that crosses this valley.', cat: 'Provincial' },
       { level: 'Municipal', name: 'City of Kamloops · TNRD', role: 'Mayor and Council · Regional District board', email: 'kamloops.ca/contact · tnrd.ca', phone: '', note: 'Ask for a formal resolution and a written submission before Sept 18.', cat: 'Municipal' }
