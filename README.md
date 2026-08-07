@@ -62,6 +62,9 @@ python3 -m http.server 8000
 
 ## Deployment
 
-Pushing to `main` triggers `.github/workflows/pages.yml`, which uploads the
-repository root as-is and deploys it to GitHub Pages. This requires the repo's
-**Settings → Pages → Source** to be set to **GitHub Actions**.
+Pages is configured to **deploy from a branch** — `main`, root. Pushing to
+`main` is the whole deploy: GitHub's own `pages-build-deployment` publishes the
+repository as-is, with no workflow of ours in the loop and no build step.
+
+`.nojekyll` matters here. Without it Jekyll would strip the `_ds/` directory,
+taking the entire design system with it.
